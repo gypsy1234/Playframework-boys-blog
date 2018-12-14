@@ -1,0 +1,28 @@
+.detail-container {
+    padding-top: 20px;
+}
+
+.detail-date {
+    font-size: 15px;
+    color: #BBBBBB;
+}
+
+.detail-title {
+    font-size: 40px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #DDDDDD;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+.detail-body {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 22px;
+}
+
+.detail-author {
+    color: #AAAAAA;
+    font-size: 20px;
+}

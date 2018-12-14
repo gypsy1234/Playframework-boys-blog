@@ -1,0 +1,11 @@
+@()(implicit request: RequestHeader)
+
+@cssList = @{List[Call](routes.Assets.versioned("stylesheets/usedLibraries.css"))}
+@jsList = @{List[Call]()}
+
+@main("使用しているライブラリ", cssList, jsList) {
+    <div class="page-container">
+        <h3>本サービスでは Apache License, Version 2.0 のライセンスで配布されている成果物を使用しています</h3>
+        <a class="default-href" href="http://www.apache.org/licenses/LICENSE-2.0">http://www.apache.org/licenses/LICENSE-2.0</a>
+    </div>
+}

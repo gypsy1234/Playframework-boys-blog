@@ -1,0 +1,37 @@
+@import EditForm._
+
+@(form: Form[Content], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+@implicitField = @{ helper.FieldConstructor(plainFieldConstructorTemplate.f) }
+
+@cssList = @{List[Call](
+    routes.Assets.versioned("stylesheets/createPost.css"),
+    routes.Assets.versioned("stylesheets/squireEditor.css")
+)}
+@jsList = @{List[Call](
+    routes.Assets.versioned("javascripts/squire.js"),
+    routes.Assets.versioned("javascripts/purify.min.js"),
+    routes.Assets.versioned("javascripts/createAndEditPost.js")
+)}
+
+@main("新しい記事を書く", cssList, jsList) {
+
+    @helper.form(postUrl, 'id -> "post-form"){
+        @helper.CSRF.formField
+        @helper.inputText(form("title"), 'id -> "post-title", 'placeholder -> "タイトル")
+        <div id="editor-div"></div>
+        @helper.textarea(form("body"), 'id -> "post-body", 'hidden -> true)
+        @helper.checkbox(form("isDraft"), 'id -> "is-draft-check", 'hidden -> true)
+        <div class="editor-footer">
+            <button id="publish-btn" class="btn">公開する</button>
+            <button id="draft-btn" class="btn hidden-item">下書きとして保存する</button>
+            <div id="editor-selector-dropdown" class="btn">▽</div>
+        </div>
+        <div id="editor-btn-selector" hidden>
+            <ul>
+                <li id="select-publish">公開する</li>
+                <li id="select-draft">下書きとして保存する</li>
+            </ul>
+        </div>
+    }
+}

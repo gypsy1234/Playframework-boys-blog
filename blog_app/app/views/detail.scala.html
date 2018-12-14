@@ -1,0 +1,21 @@
+@import models.Post
+@import java.text.SimpleDateFormat;
+
+@(post: Post)(implicit request: RequestHeader)
+
+@sdf= @{new SimpleDateFormat("yyyy/MM/dd")}
+
+@cssList = @{List[Call](routes.Assets.versioned("stylesheets/detail.css"))}
+@jsList = @{List[Call]()}
+
+@main(post.title, cssList, jsList) {
+    <div class="detail-container">
+        <div class="detail-date">@sdf.format(post.createdDate)</div>
+        <div class="detail-title">@post.title</div>
+        <div class="detail-body">
+            @Html(post.body)
+        </div>
+        <a href="@routes.UserPageController.show(post.createUserId)" class="detail-author">@post.createUserId</a>
+    </div>
+}
+

@@ -1,0 +1,45 @@
+@import util._
+@import models._
+@import java.text.SimpleDateFormat;
+
+@(post_planeText_seq: Seq[(Post, String)])(implicit request: RequestHeader)
+
+@sdf= @{new SimpleDateFormat("yyyy/MM/dd")}
+
+@cssList = @{List[Call](routes.Assets.versioned("stylesheets/index.css"))}
+@jsList = @{List[Call]()}
+
+@createPostHtml(post_planeText_tuple: (Post, String)) = {
+    <div class="post-title"><a href="@routes.PostController.show(post_planeText_tuple._1.id.toString)">@post_planeText_tuple._1.title</a></div>
+    <div class="post-author"><a href="@routes.UserPageController.show(post_planeText_tuple._1.createUserId)">@post_planeText_tuple._1.createUserId</a></div>
+    <div class="post-created-date">@sdf.format(post_planeText_tuple._1.createdDate)</div>
+    <div class="post-body">
+        @post_planeText_tuple._2 match {
+            case b if b.length < 150 => { <p>@b</p> }
+            case b => { <p>@b.slice(0,150) ...</p> }
+        }
+    </div>
+}
+
+@main("PlayFramework Boys Blog", cssList, jsList) {
+    <div class="newcomer-header"><h2 class="page-navigator">新規投稿</h2></div>
+    <div class="newcomer-container">
+        <div class="newcomer-line newcomer-line1">
+            <div class="newcomer-left newcomer">@createPostHtml(post_planeText_seq(0))</div>
+            <div class="newcomer-center newcomer">@createPostHtml(post_planeText_seq(1))</div>
+            <div class="newcomer-right newcomer">@createPostHtml(post_planeText_seq(2))</div>
+        </div>
+        <div class="newcomer-line newcomer-line2">
+            <div class="newcomer-left newcomer">@createPostHtml(post_planeText_seq(3))</div>
+            <div class="newcomer-center newcomer">@createPostHtml(post_planeText_seq(4))</div>
+            <div class="newcomer-right newcomer">@createPostHtml(post_planeText_seq(5))</div>
+        </div>
+        <div class="newcomer-line newcomer-line3">
+            <div class="newcomer-left newcomer">@createPostHtml(post_planeText_seq(6))</div>
+            <div class="newcomer-center newcomer">@createPostHtml(post_planeText_seq(7))</div>
+            <div class="newcomer-right newcomer">@createPostHtml(post_planeText_seq(8))</div>
+        </div>
+    </div>
+}
+
+

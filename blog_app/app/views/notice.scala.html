@@ -1,0 +1,10 @@
+@(pageTitle: String, title: String, body: String)(implicit request: RequestHeader)
+
+@cssList = @{List[Call]()}
+@jsList = @{List[Call]()}
+
+@main(pageTitle, cssList, jsList) {
+    <h1>@title</h1>
+    <h2>@body</h2>
+    <a href="@routes.HomeController.index">サイトトップページ</a>
+}

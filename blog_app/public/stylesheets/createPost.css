@@ -1,0 +1,51 @@
+#post-title {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.3em 0.3em 0.3em 0.3em;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.editor-footer {
+    width: 25%;
+    min-width: 105px;
+    display: inline-block;
+    color: black;
+}
+
+#editor-selector-dropdown {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 2px 7px 3px 6px;
+    border-radius: 5px;
+}
+
+#editor-btn-selector {
+    border: 1px solid #AAAAAA;
+    padding: 0.1em 0.1em 0.1em 0.1em;
+    margin-top: 1em;
+    width: 17%;
+    font-size: 12px;
+    box-shadow: 2px 4px 4px #DDDDDD;
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+    border-radius: 5px;
+}
+
+#editor-btn-selector ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+#select-publish {
+    border-bottom: 1px solid #AAAAAA;
+}
+
+#editor-btn-selector li {
+    padding: 0.3em 0.1em 0.3em 1em;
+}
+
+#editor-btn-selector li:hover {
+    background-color: #EEEEEE;
+}

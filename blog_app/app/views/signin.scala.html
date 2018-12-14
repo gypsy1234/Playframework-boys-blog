@@ -1,0 +1,32 @@
+@(form: Form[SigninForm.UserInfo], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+@implicitField = @{ helper.FieldConstructor(basicFieldConstructorTemplate.f) }
+
+@cssList = @{List[Call](routes.Assets.versioned("stylesheets/signin.css"))}
+@jsList = @{List[Call]()}
+
+@main("サインイン", cssList, jsList) {
+    <div class="signin-container">
+        <h2>サインイン</h2>
+        <div class="signin-input-container">
+            @helper.form(postUrl) {
+                @helper.CSRF.formField
+                @helper.inputText(form("id"), 'placeholder -> "ユーザーID", '_help -> "本サービスで使用するID (英数4～30文字)")
+                @helper.inputPassword(form("pass"), 'placeholder -> "パスワード",'_help ->  "本サービスで使用するパスワード (英数8～30文字)")
+                @if(form.hasGlobalErrors) {
+                    <div class="signin-error-container">
+                        @for(error <- form.globalErrors) {
+                        <p>@error.format</p>
+                        }
+                    </div>
+                }
+                <button class="signin-button">サインイン</button>
+            }
+        </div>
+        <div class="signin-signup-container">
+            <p>はじめての方はこちら</p>
+            <a href="@routes.SignupController.show()" class="signin-signup-link">ユーザー登録</a>
+        </div>
+
+    </div>
+}

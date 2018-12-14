@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Lobster|Noto+Sans|Sawarabi+Mincho');
+
+body {
+    margin: 0;
+    font-family: 'Noto Sans', 'Sawarabi Mincho', sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.default-href{
+    color: #0000EE;
+    text-decoration: underline;
+}
+
+.underline-href{
+    text-decoration: underline;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 0;
+    appearance: none;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #DDDDDD;
+    border-top: 0;
+    border-left: 0;
+    border-bottom: 0;
+    color: black;
+    padding: 4px 7px 4px 7px;
+    margin: 0;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #CCCCCC;
+    cursor : pointer;
+}
+
+.btn-danger {
+   background-color: rgb(224, 74, 69);
+   color: white;
+}
+
+.btn-danger:hover {
+    background: rgba(224, 74, 69, 0.7);
+}
+
+.hidden-item {
+    display: none;
+}
+
+.page-header {
+    background-color: #DDDDDD;
+    padding: 10px 0px 30px 8px;
+    min-width: 720px;
+}
+
+.logo {
+    font-family: 'Lobster', cursive;
+    min-width: 173px;
+    float: left;
+}
+
+.service_menu {
+    float: right;
+    display: flex;
+    padding-right: 20px;
+}
+
+.service-menu-item {
+    font-size: 13px;
+    margin: 0 0.5em 0 0.5em;
+}
+
+.service-menu-button {
+    font-size: 13px;
+    font-family: 'Noto Sans', 'Sawarabi Mincho', sans-serif;
+}
+
+.content_container {
+    padding: 0px 10px 0px 10px;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 5em;
+    margin-top: 2em;
+    max-width: 1000px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #111111;
+    font-size: 14pt;
+    text-decoration: none;
+}
+
+.date {
+    color: #828282;
+}
+
+.save {
+    float: right;
+}
+
+.post-form textarea, .post-form input {
+    width: 100%;
+}
+
+.top-menu, .top-menu:hover, .top-menu:visited {
+    color: #ffffff;
+    float: right;
+    font-size: 26pt;
+    margin-right: 20px;
+}

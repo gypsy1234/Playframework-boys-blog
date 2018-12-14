@@ -1,0 +1,16 @@
+@()(implicit request: RequestHeader)
+
+@cssList = @{List[Call]()}
+@jsList = @{List[Call]()}
+
+@main("アカウント削除確認",cssList, jsList) {
+    <h2>本当にこのアカウントを削除してもよろしいですか？</h2>
+    <p><strong>注意</strong>
+        <br>作成した記事は全て削除されます
+    </p>
+    <form>
+        @helper.CSRF.formField
+        <button formmethod="post" formaction="@routes.SignupController.deleteUser" class="btn btn-danger">削除</button>
+        <button formmethod="get" formaction="@routes.HomeController.index" class="btn">キャンセル</button>
+    </form>
+}

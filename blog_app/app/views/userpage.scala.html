@@ -1,0 +1,36 @@
+@import util.SessionManager
+
+@(userId: String, post_planeText_seq: Seq[(Post, String)])(implicit request: RequestHeader)
+
+@cssList = @{List[Call](routes.Assets.versioned("stylesheets/mypage.css"))}
+@jsList = @{List[Call]()}
+@isOwner = @{ SessionManager.get match {
+        case Some(s) if s.getLoginId == userId => {true}
+        case _ => {false}
+    }
+}
+
+    @main(userId, cssList, jsList) {
+    @(isOwner, post_planeText_seq.isEmpty) match {
+        case (true, true) => { <a class="underline-href" href="@routes.CreateAndEditController.show_create()">最初の記事を書いてみましょう</a> }
+        case (false, true) => { <p>このユーザーはまだ記事を書いていません</p> }
+        case _ => {}
+    }
+    @for(post_planeText_tuple <- post_planeText_seq) {
+        <div class="post-row">
+            <div class="title">
+                <a href="@routes.PostController.show(post_planeText_tuple._1.id.toString)">@post_planeText_tuple._1.title</a>
+            </div>
+            <div class="body">
+                @post_planeText_tuple._2 match {
+                    case b if b.length < 150 => { <p>@b</p> }
+                    case b => { <p>@b.slice(0,150) ...</p> }
+                }
+            </div>
+            @if(isOwner) {
+                <a href="@routes.CreateAndEditController.show_edit(post_planeText_tuple._1.id.toString)" class="btn">編集</a>
+            }
+        </div>
+    }
+    <footer class="mypage-footer"></footer>
+}

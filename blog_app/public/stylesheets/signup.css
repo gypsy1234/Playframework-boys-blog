@@ -1,0 +1,73 @@
+#caution-container {
+    color: red;
+}
+
+#caution-container h3 {
+    text-align: left;
+}
+
+.signup-container {
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.signup-input-container {
+    padding-top: 10px;
+}
+
+.signup-container input[type='text'],
+.signup-container input[type='password'] {
+    width: 20em;
+    padding: 0.5em 1em;
+    transition: 0.2s;
+    border: 2px solid #DDDDDD;
+    border-radius: 100px;
+    background: transparent;
+}
+
+.signup-container input[type='text']:hover,
+.signup-container input[type='password']:hover {
+    border-color: #DDDDDD;
+    box-shadow: 0 0 10px rgba(0, 100, 115, 0.9);
+}
+
+.signup-container input[type='text']:focus,
+.signup-container input[type='password']:focus {
+    border-color: #fafa9d;
+    box-shadow: 0 0 10px rgba(250, 250, 157, 0.8);
+}
+
+.signup-container input[type='text']:focus ~ p.help,
+.signup-container input[type='password']:focus ~ p.help {
+    max-height: 3em;
+    transition: 0.2s;
+}
+
+.signup-container p.help {
+    font-size: 12px;
+    overflow: hidden;
+    max-height: 0;
+    margin-top: 0.5em;
+    transition: 0.2s;
+    color: #777777;
+}
+.signup-container p.help:before {
+    content: '※';
+}
+
+input::-webkit-input-placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+input::focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+.signup-button {
+    width: 15em;
+    padding: 0.5em 1em;
+    border: 2px solid #D9E5FF;
+    background: #D9E5FF;
+    border-radius: 50px;
+}

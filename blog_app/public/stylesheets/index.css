@@ -1,0 +1,83 @@
+
+.newcomer-header {
+    border-color: #DDDDDD;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    margin: 16px 0 0 16px;
+}
+
+.page-navigator {
+    letter-spacing: 0.2em;
+}
+
+.newcomer-container {
+    margin: 30px 12px 12px 12px;
+}
+
+.newcomer-line {
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #DDDDDD;
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    text-size-adjust: 100%;
+    height: 330px;
+}
+
+.newcomer {
+    vertical-align: top;
+    overflow-wrap: break-word;
+    min-width: 260px;
+    width: 299px;
+    display: block;
+    border-color: #DDDDDD;
+}
+
+.newcomer-left {
+    padding-right: 15px;
+    border-right-style: solid;
+    border-right-width: 1px;
+}
+
+.newcomer-center {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.newcomer-right {
+    padding-left: 15px;
+    border-left-style: solid;
+    border-left-width: 1px;
+}
+
+.post-title {
+    line-height: 31.36px;
+    margin-bottom: 8px;
+    overflow-wrap; break-word;
+    font-size: 22.4px;
+}
+
+.post-title:hover {
+    text-decoration: underline;
+}
+
+.post-author {
+    font-size: 14.4px;
+    line-height: 20.16px;
+    margin-bottom: 4.32px;
+    overflow-wrap: break-word;
+}
+
+.post-author:hover {
+    text-decoration: underline;
+}
+
+.post-created-date {
+    font-size: 12.8px;
+    overflow-wrap: break-word;
+}
+
+.post-body {
+    padding-top: 10px;
+}

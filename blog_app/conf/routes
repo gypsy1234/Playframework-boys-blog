@@ -1,0 +1,33 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+GET     /usedLibraries              controllers.UsedLibrariesController.show
+GET     /signin                     controllers.SigninController.show
+GET     /signup                     controllers.SignupController.show
+GET     /accountDelConfirmation     controllers.SignupController.show_accountDelConfirmation
+GET     /userPage/:id               controllers.UserPageController.show(id: String)
+GET     /create                     controllers.CreateAndEditController.show_create
+GET     /edit/:postId               controllers.CreateAndEditController.show_edit(postId: String)
+GET     /post/:id                   controllers.PostController.show(id: String)
+
+POST    /createUser                 controllers.SignupController.createUser
+POST    /deleteUser                 controllers.SignupController.deleteUser
+POST    /signinProcess              controllers.SigninController.signin
+POST    /signout                    controllers.SigninController.signout
+POST    /create                     controllers.CreateAndEditController.create
+POST    /edit/update/:postId        controllers.CreateAndEditController.update(postId: String)
+POST    /edit/delete/:postId        controllers.CreateAndEditController.delete(postId: String)
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+GET     /*any                       controllers.NotFoundController.show(any: String)
+POST    /*any                       controllers.NotFoundController.show(any: String)
+PATCH   /*any                       controllers.NotFoundController.show(any: String)
+PUT     /*any                       controllers.NotFoundController.show(any: String)
+DELETE  /*any                       controllers.NotFoundController.show(any: String)
+HEAD    /*any                       controllers.NotFoundController.show(any: String)

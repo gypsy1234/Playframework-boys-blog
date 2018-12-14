@@ -1,0 +1,20 @@
+@(form: Form[CredentForm.CredentInfo], postUrl: Call)(implicit request: MessagesRequestHeader)
+
+@implicitField = @{ helper.FieldConstructor(basicFieldConstructorTemplate.f) }
+
+@cssList = @{List[Call](routes.Assets.versioned("stylesheets/signup.css"))}
+@jsList = @{List[Call]()}
+
+@main("ユーザー登録", cssList, jsList) {
+    <div class="signup-container">
+        <h2>ユーザー登録</h2>
+        <div class="signup-input-container">
+            @helper.form(postUrl) {
+                @helper.CSRF.formField
+                @helper.inputText(form("id"), 'placeholder -> "ユーザーID", '_help -> "本サービスで使用するID (英数4～30文字)")
+                @helper.inputPassword(form("pass"), 'placeholder -> "パスワード",'_help ->  "本サービスで使用するパスワード (英数8～30文字)")
+                <button class="signup-button">登録</button>
+            }
+        </div>
+    </div>
+}
