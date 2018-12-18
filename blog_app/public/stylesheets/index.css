@@ -81,3 +81,15 @@
 .post-body {
     padding-top: 10px;
 }
+
+#global-signup-btn {
+    background-color: #AED6D1;
+    padding: 0 10px;
+    border-radius: 10px;
+}
+
+#global-signin-btn {
+    background-color: #FFE8A3;
+    padding: 0 10px;
+    border-radius: 10px;
+}

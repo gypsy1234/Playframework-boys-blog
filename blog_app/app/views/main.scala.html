@@ -32,7 +32,10 @@
                         </form>
                         <div class="service-menu-item"><a href="@routes.SignupController.show_accountDelConfirmation">アカウント削除</a></div>
                     }
-                    case None => { <div class="service-menu-item"><a href="@routes.SigninController.show()">サインイン</a></div> }
+                    case None => {
+                        <div id="global-signup-btn" class="service-menu-item"><a href="@routes.SignupController.show()">ユーザー登録</a></div>
+                        <div id="global-signin-btn" class="service-menu-item"><a href="@routes.SigninController.show()">サインイン</a></div>
+                    }
                 }
                 <div class="service-menu-item"><a href="@routes.UsedLibrariesController.show">使用しているライブラリについて</a></div>
             </div>
